@@ -14,7 +14,7 @@ void main() {
   runApp(const MyApp());
 }
 
-// 나중에 지워
+// 헬로 월드 아진짜 재미없다
 
 /*
 class와 instance
