@@ -14,6 +14,8 @@ void main() {
   runApp(const MyApp());
 }
 
+// 나중에 지워
+
 /*
 class와 instance
 class MyApp => 설계도
