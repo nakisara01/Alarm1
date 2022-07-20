@@ -8,7 +8,7 @@ class AlarmCard extends StatelessWidget {
   AlarmCard({required this.index});
 
   List<bool> isSwitched = [
-    false,
+    true,
     false,
     false,
     true,
