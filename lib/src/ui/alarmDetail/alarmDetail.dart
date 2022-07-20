@@ -35,8 +35,9 @@ class AlarmDetailPage extends StatelessWidget {
                 height: size.height * 0.25,
                 child: CupertinoDatePicker(
                     onDateTimeChanged: (DateTime value) {})),
-            Text('달력')
+            Text('달력 설정')
           ],
+
         ));
   }
 }
