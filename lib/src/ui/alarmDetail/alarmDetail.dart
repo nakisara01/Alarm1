@@ -16,7 +16,7 @@ class AlarmDetailPage extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
               child: Text(
                 '취소',
-                style: TextStyle(color: Colors.orange, fontSize: 18),
+                style: TextStyle(color: IOS_ORANGE, fontSize: 18),
               ),
             ),
             actions: [
@@ -24,7 +24,7 @@ class AlarmDetailPage extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   '저장',
-                  style: TextStyle(color: Colors.orange, fontSize: 18),
+                  style: TextStyle(color: IOS_ORANGE, fontSize: 18),
                 ),
               ),
             ],
