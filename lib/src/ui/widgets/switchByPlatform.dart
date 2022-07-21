@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:alarm1/src/constants/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -25,7 +26,7 @@ class SwitchByPlatFormState extends State<SwitchByPlatForm> {
         });
         widget.isSwitched = value;
       },
-      activeColor: Colors.green,
+      activeColor: Colors.green
     )
         : Switch(
         value: widget.isSwitched,

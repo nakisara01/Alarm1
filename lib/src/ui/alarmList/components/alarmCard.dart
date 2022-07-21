@@ -36,7 +36,7 @@ class AlarmCard extends StatelessWidget {
             child: Container(
                 child: Row(
               children: [
-                Expanded(child: TextCard()),
+                Expanded(child: TextCard(isSwitched: isSwitched[index],)),
                 SwitchByPlatForm(isSwitched: isSwitched[index])
               ],
             ))));

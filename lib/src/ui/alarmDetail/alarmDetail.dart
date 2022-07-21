@@ -1,4 +1,6 @@
+import 'package:alarm1/src/constants/color.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AlarmDetailPage extends StatelessWidget {
@@ -6,8 +8,9 @@ class AlarmDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.black,
         appBar: AppBar(
-            backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
             elevation: 0,
             leading: TextButton(
               onPressed: () => Navigator.pop(context),
@@ -34,10 +37,31 @@ class AlarmDetailPage extends StatelessWidget {
             Container(
                 height: size.height * 0.25,
                 child: CupertinoDatePicker(
+                    mode: CupertinoDatePickerMode.time,
                     onDateTimeChanged: (DateTime value) {})),
+            InkWell(
+              onTap: () {},
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Container(
+                  child: Row(
+                    children: [
+                      const Expanded(
+                          child: Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Text('반복'),
+                      ),),
+                          Padding(
+                        padding: EdgeInsets.only(right: 8.0),
+                        child: Text('안 함 >'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
             Text('달력 설정')
           ],
-
         ));
   }
 }

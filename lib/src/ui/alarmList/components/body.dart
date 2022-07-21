@@ -17,7 +17,7 @@ class AlarmListBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 '알람',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
               ));
         } else {
           return AlarmCard(index: index-1);
