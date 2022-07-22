@@ -19,6 +19,10 @@ class AlarmCard extends StatelessWidget {
     false,
     true
   ];
+  List<bool> onoff = [
+    true
+  ];
+
 
   int index;
 
@@ -28,8 +32,8 @@ class AlarmCard extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => AlarmDetailPage()),
-          );
+            MaterialPageRoute(builder: (context) => AlarmDetailPage(),
+          ));
         },
         child: Padding(
             padding: EdgeInsets.all(16.0),
