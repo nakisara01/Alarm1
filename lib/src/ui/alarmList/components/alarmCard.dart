@@ -5,43 +5,31 @@ import '../../alarmDetail/alarmDetail.dart';
 import '../../widgets/switchByPlatform.dart';
 
 class AlarmCard extends StatelessWidget {
-  AlarmCard({required this.index});
+  AlarmCard({required this.isSwitched, required this.onChanged});
 
-  List<bool> isSwitched = [
-    true,
-    false,
-    false,
-    true,
-    false,
-    true,
-    true,
-    false,
-    false,
-    true
-  ];
-  List<bool> onoff = [
-    true
-  ];
-
-
-  int index;
+  bool isSwitched;
+  Function(bool) onChanged;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
           Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AlarmDetailPage(),
-          ));
+              context,
+              MaterialPageRoute(
+                builder: (context) => AlarmDetailPage(),
+              ));
         },
         child: Padding(
             padding: EdgeInsets.all(16.0),
             child: Container(
                 child: Row(
               children: [
-                Expanded(child: TextCard(isSwitched: isSwitched[index],)),
-                SwitchByPlatForm(isSwitched: isSwitched[index])
+                Expanded(
+                    child: TextCard(
+                  isSwitched: isSwitched,
+                )),
+                SwitchByPlatForm(isSwitched: isSwitched, onChanged: onChanged)
               ],
             ))));
   }

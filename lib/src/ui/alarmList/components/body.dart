@@ -1,3 +1,4 @@
+import 'package:alarm1/src/controller/alarm.dart';
 import 'package:alarm1/src/ui/alarmList/components/textCard.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,8 @@ import '../../widgets/switchByPlatform.dart';
 import 'alarmCard.dart';
 
 class AlarmListBody extends StatelessWidget {
+  final _controller = AlarmController(
+      [true, false, false, true, false, true, true, false, false, true]);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,15 @@ class AlarmListBody extends StatelessWidget {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
               ));
         } else {
-          return AlarmCard(index: index-1);
+          return ValueListenableBuilder(
+              valueListenable: _controller,
+              builder: (BuildContext context, List<bool> value, Widget? child) {
+                return AlarmCard(
+                  isSwitched: value[index - 1],
+                  onChanged: (value) => _controller.switching(
+                      index: index - 1, isSwitched: value),
+                );
+              });
         }
       },
       separatorBuilder: (BuildContext context, int index) {
