@@ -1,4 +1,6 @@
 import 'package:alarm1/src/constants/color.dart';
+import 'package:alarm1/src/constants/padding.dart';
+import 'package:alarm1/src/ui/widgets/titleWithDescriptionBox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +8,8 @@ import 'package:flutter/material.dart';
 import '../widgets/switchByPlatform.dart';
 
 class AlarmDetailPage extends StatelessWidget {
-  List<bool> isSwitched = [
-    true,
-  ];
+  bool isSwitched = false;
+  late Function(bool) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -44,98 +45,109 @@ class AlarmDetailPage extends StatelessWidget {
               child: CupertinoDatePicker(
                   mode: CupertinoDatePickerMode.time,
                   onDateTimeChanged: (DateTime value) {})),
-          InkWell(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(16.0),
-              color: IOS_SYSTEM_GRAY[2],
-              child: Row(
-                children: [
-                  const Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Text('반복'),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      '주중 >',
-                      style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {},
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Container(
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text('레이블'),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Text(
-                        '알람 >',
-                        style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {},
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Container(
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text('사운드'),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 8.0),
-                      child: Text(
-                        '희망 >',
-                        style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
           Container(
-              child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Container(
+              decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(kDefaultPadding)),
+                  color: IOS_SYSTEM_GRAY[2]),
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
                       child: Row(
-                    children: [
-                      const Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 8.0),
-                          child: Text('다시 알림'),
-                        ),
+                        children: [
+                          const Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 8.0),
+                              child: Text('반복'),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 8.0),
+                            child: Text(
+                              '주중 >',
+                              style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
+                            ),
+                          ),
+                        ],
                       ),
-                      SwitchByPlatForm(
-                        isSwitched: isSwitched[0],
-                        onChanged: (bool) {},
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Row(
+                        children: [
+                          const Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 8.0),
+                              child: Text('레이블'),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 8.0),
+                            child: Text(
+                              '알람 >',
+                              style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  )))),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Row(
+                        children: [
+                          const Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 8.0),
+                              child: Text('사운드'),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 8.0),
+                            child: Text(
+                              '경보기 >',
+                              style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                      child: Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Row(
+                            children: [
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 8.0),
+                                  child: Text('다시 알림'),
+                                ),
+                              ),
+                              SwitchByPlatForm(
+                                isSwitched: isSwitched,
+                                onChanged: (bool) {},
+                              ),
+                            ],
+                          ))),
+                  titleDescriptionBox(
+                    title: 'dgerg',
+                    content: SwitchByPlatForm(
+                      isSwitched: isSwitched,
+                      onChanged: (bool) {},
+                    ),
+                    padding: 16.0,
+                  )
+                ],
+              )),
           TextButton(
             style: ButtonStyle(
                 backgroundColor:
