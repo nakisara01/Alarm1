@@ -1,6 +1,7 @@
 import 'package:alarm1/src/constants/color.dart';
 import 'package:alarm1/src/constants/padding.dart';
 import 'package:alarm1/src/ui/widgets/titleWithDescriptionBox.dart';
+import 'package:alarm1/src/ui/widgets/titleWithDescriptionButtonBox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -145,7 +146,13 @@ class AlarmDetailPage extends StatelessWidget {
                       onChanged: (bool) {},
                     ),
                     padding: 16.0,
-                  )
+                  ),
+                  titleWithDescriptionButtonBox(title: 'dgerg',
+                    content: SwitchByPlatForm(
+                      isSwitched: isSwitched,
+                      onChanged: (bool) {},
+                    ),
+                    padding: 16.0,)
                 ],
               )),
           TextButton(

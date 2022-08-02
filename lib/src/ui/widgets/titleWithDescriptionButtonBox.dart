@@ -1,11 +1,12 @@
+import 'package:alarm1/src/constants/color.dart';
 import 'package:flutter/material.dart';
 
 class titleWithDescriptionButtonBox extends StatefulWidget{
-  titleWithDescriptionButtonBox({required this.content, required this.title, this. padding});
+  titleWithDescriptionButtonBox({required this.title, required this.content, this. padding});
 
-  final Widget content;
-  final String title;
-  final double? padding;
+  Widget content;
+  String title;
+  double? padding;
 
   @override
   State<titleWithDescriptionButtonBox> createState() => titleWithDescriptionButtionBoxState();
@@ -16,19 +17,25 @@ class titleWithDescriptionButtionBoxState extends State<titleWithDescriptionButt
   @override
   Widget build(BuildContext context) {
 
-    return Padding(
-      padding: EdgeInsets.all(padding!),
-      child: Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(left: 8.0),
-              child: Text(title),
-            ),
+    //TODO: 변수설정 다시 해서 padding, title, content 다시 쓸 수 있게 하기
+    return
+      InkWell(
+        onTap: () {},
+        splashColor: IOS_SYSTEM_GRAY[1],
+        child: Padding(
+          padding: EdgeInsets.all(widget.padding!),
+          child: Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text(widget.title),
+                ),
+              ),
+              Padding(padding: EdgeInsets.only(right: 8.0), child: widget.content),
+            ],
           ),
-          Padding(padding: EdgeInsets.only(right: 8.0), child: content),
-        ],
-      ),
-    );
+        ),
+      );
   }
 }
