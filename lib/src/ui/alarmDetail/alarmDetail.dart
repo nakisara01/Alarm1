@@ -1,7 +1,7 @@
 import 'package:alarm1/src/constants/color.dart';
 import 'package:alarm1/src/constants/padding.dart';
 import 'package:alarm1/src/ui/widgets/titleWithDescriptionBox.dart';
-import 'package:alarm1/src/ui/widgets/titleWithDescriptionButtonBox.dart';
+import 'package:alarm1/src/ui/widgets/TextTitleWithDescriptionButtonBox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +46,7 @@ class AlarmDetailPage extends StatelessWidget {
               child: CupertinoDatePicker(
                   mode: CupertinoDatePickerMode.time,
                   onDateTimeChanged: (DateTime value) {})),
+          //Detail페이지의 Datepicker아래 메뉴 박스
           Container(
               decoration: BoxDecoration(
                   borderRadius:
@@ -53,106 +54,32 @@ class AlarmDetailPage extends StatelessWidget {
                   color: IOS_SYSTEM_GRAY[2]),
               child: Column(
                 children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Row(
-                        children: [
-                          const Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 8.0),
-                              child: Text('반복'),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 8.0),
-                            child: Text(
-                              '주중 >',
-                              style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  TextTitleWithDescriptionButtonBox(
+                    title: Text('반복'),
+                    content: Text('안함 >'),
                   ),
-                  InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Row(
-                        children: [
-                          const Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 8.0),
-                              child: Text('레이블'),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 8.0),
-                            child: Text(
-                              '알람 >',
-                              style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  TextTitleWithDescriptionButtonBox(
+                    title: Text('레이블'),
+                    content: Text('알람 >'),
                   ),
-                  InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Row(
-                        children: [
-                          const Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.only(left: 8.0),
-                              child: Text('사운드'),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 8.0),
-                            child: Text(
-                              '경보기 >',
-                              style: TextStyle(color: IOS_SYSTEM_GRAY[0]),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  TextTitleWithDescriptionButtonBox(
+                    title: Text('사운드'),
+                    content: Text('경보기 >'),
                   ),
-                  Container(
-                      child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Row(
-                            children: [
-                              const Expanded(
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 8.0),
-                                  child: Text('다시 알림'),
-                                ),
-                              ),
-                              SwitchByPlatForm(
-                                isSwitched: isSwitched,
-                                onChanged: (bool) {},
-                              ),
-                            ],
-                          ))),
-                  titleDescriptionBox(
-                    title: 'dgerg',
+                  TextTitleWithDescriptionButtonBox(
+                    title: Text('다시 알림'),
                     content: SwitchByPlatForm(
                       isSwitched: isSwitched,
                       onChanged: (bool) {},
                     ),
-                    padding: 16.0,
                   ),
-                  titleWithDescriptionButtonBox(title: 'dgerg',
+                  TextTitleWithDescriptionButtonBox(
+                    title: Text('test2'),
                     content: SwitchByPlatForm(
                       isSwitched: isSwitched,
                       onChanged: (bool) {},
                     ),
-                    padding: 16.0,)
+                  )
                 ],
               )),
           TextButton(
