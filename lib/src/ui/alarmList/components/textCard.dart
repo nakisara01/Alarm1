@@ -16,7 +16,6 @@ class TextCard extends StatefulWidget {
 class TextCardState extends State<TextCard>{
   @override
   Widget build(BuildContext context) {
-    // TODO: SwitchByPlatform이 변경되면 textColor도 변경되게 하기
     Color textColor = widget.isSwitched ? Colors.white:IOS_SYSTEM_GRAY[0];
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
