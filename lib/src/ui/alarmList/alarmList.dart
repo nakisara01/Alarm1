@@ -22,6 +22,7 @@ class AlarmListPage extends StatelessWidget {
               style: TextStyle(color: IOS_ORANGE, fontSize: 18),
             ),
           ),
+          title: Text('알람'),
           actions: [
             IconButton(
                 onPressed: () {},
