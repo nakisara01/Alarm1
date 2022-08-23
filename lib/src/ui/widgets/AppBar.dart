@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
-  BaseAppBar({this.leftWidget, this.middleText, this.rightWidgets});
+  BaseAppBar({this.leading, this.title, this.actions});
 
-  Widget? leftWidget, middleText;
-  List<Widget>? rightWidgets;
+  Widget? leading, title;
+  List<Widget>? actions;
 
   static final AppBar _appBar = AppBar();
 
@@ -13,9 +13,9 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         backgroundColor: Colors.black,
         elevation: 0,
-        leading: leftWidget,
-        title: middleText,
-        actions: rightWidgets);
+        leading: leading,
+        title: title,
+        actions: actions);
   }
 
   @override
