@@ -32,7 +32,6 @@ class AlarmListPage extends StatelessWidget {
                 ))
           ],
         ),
-        // TODO: 스크롤이 가능하도록 만들기; why? 스크롤이 불가능하면 Overflow 문제가 발생한다.
         body: AlarmListBody());
   }
 }
