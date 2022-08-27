@@ -5,7 +5,7 @@ import '../../../constants/color.dart';
 
 
 
-class AlarmDetailAppBar extends StatelessWidget implements PreferredSizeWidget{
+class AlarmListAppBar extends StatelessWidget implements PreferredSizeWidget{
 
   static final AppBar _appBar = AppBar();
 
@@ -29,8 +29,8 @@ class AlarmDetailAppBar extends StatelessWidget implements PreferredSizeWidget{
           ),
         ],
         title: Text(
-          '알람 편집',
-          style: TextStyle(color: Colors.white, fontSize: 18, ),
+          '알람',
+          style: TextStyle(color: Colors.white, fontSize: 18),
         ));
   }
 
