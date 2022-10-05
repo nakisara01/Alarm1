@@ -28,17 +28,17 @@ class TextCardState extends State<TextCard>{
                   // TODO: UI 로직과 비즈니스 로직을 분리해서 데이터를 관리하기
                   child: Text(
                     "오전",
-                    style: TextStyle(fontSize: 16.0, color: textColor),
+                    style: TextStyle(fontSize: 30.0, color: textColor),
                   )),
               Text(
                 "8:00",
-                style: TextStyle(fontSize: 24.0, color: textColor),
+                style: TextStyle(fontSize: 45.0, color: textColor, fontFamily: "cafe"),
               )
             ],
           ),
           Text(
             "알람 설명",
-            style: TextStyle(fontSize: 12.0, color: textColor),
+            style: TextStyle(fontSize: 20.0, color: textColor),
           )
         ],
       );
