@@ -14,8 +14,6 @@ class alarmConfigurationBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    isSwitched = isSwitched;
-
     return Column(
       children: [
         Container(
@@ -27,12 +25,16 @@ class alarmConfigurationBox extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
+                Padding(padding: const EdgeInsets.all(4.0)),
                 TextTitleWithDescriptionButtonBox(
                     title: Text('반복'), content: Text('안 함>')),
+                Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
                     title: Text('레이블'), content: Text('알람>')),
+                Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
                     title: Text('사운드'), content: Text('개 짖는 소리')),
+                Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
                     title: Text('다시 알림'),
                     content: SwitchByPlatForm(
