@@ -7,11 +7,15 @@ import '../../../constants/color.dart';
 import '../../../constants/padding.dart';
 
 class alarmConfigurationBox extends StatelessWidget {
+  alarmConfigurationBox({required this.isSwitched, required this.onChanged});
+
   bool isSwitched = false;
-  late Function(bool) onChanged;
+  Function(bool) onChanged;
 
   @override
   Widget build(BuildContext context) {
+    isSwitched = isSwitched;
+
     return Column(
       children: [
         Container(
@@ -21,8 +25,7 @@ class alarmConfigurationBox extends StatelessWidget {
           margin: EdgeInsets.all(13),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child:
-            Column(
+            child: Column(
               children: [
                 TextTitleWithDescriptionButtonBox(
                     title: Text('반복'), content: Text('안 함>')),
@@ -31,7 +34,9 @@ class alarmConfigurationBox extends StatelessWidget {
                 TextTitleWithDescriptionButtonBox(
                     title: Text('사운드'), content: Text('개 짖는 소리')),
                 TextTitleWithDescriptionButtonBox(
-                    title: Text('다시 알림'), content: SwitchByPlatForm(isSwitched: isSwitched, onChanged: onChanged))
+                    title: Text('다시 알림'),
+                    content: SwitchByPlatForm(
+                        isSwitched: isSwitched, onChanged: onChanged))
               ],
             ),
           ),
