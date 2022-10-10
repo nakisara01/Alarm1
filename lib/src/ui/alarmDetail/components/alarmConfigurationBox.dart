@@ -27,16 +27,29 @@ class alarmConfigurationBox extends StatelessWidget {
               children: [
                 Padding(padding: const EdgeInsets.all(4.0)),
                 TextTitleWithDescriptionButtonBox(
-                    title: Text('반복'), content: Text('안 함>')),
+                    title: Text(
+                      "반복",
+                      style: TextStyle(fontSize: 17.0),
+                    ),
+                    content: Text('안 함>')),
                 Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
-                    title: Text('레이블'), content: Text('알람>')),
+                    title: Text(
+                      "레이블",
+                      style: TextStyle(fontSize: 17.0),
+                    ), content: Text('알람>')),
                 Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
-                    title: Text('사운드'), content: Text('개 짖는 소리')),
+                    title: Text(
+                      "사운드",
+                      style: TextStyle(fontSize: 17.0),
+                    ), content: Text('개 짖는 소리')),
                 Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
-                    title: Text('다시 알림'),
+                    title: Text(
+                      "다시 알림",
+                      style: TextStyle(fontSize: 17.0),
+                    ),
                     content: SwitchByPlatForm(
                         isSwitched: isSwitched, onChanged: onChanged))
               ],
