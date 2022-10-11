@@ -37,14 +37,16 @@ class alarmConfigurationBox extends StatelessWidget {
                     title: Text(
                       "레이블",
                       style: TextStyle(fontSize: 17.0),
-                    ), content: Text('알람>')),
+                    ),
+                    content: Text('알람>')),
                 Padding(padding: const EdgeInsets.all(18.0)),
                 TextTitleWithDescriptionButtonBox(
                     title: Text(
                       "사운드",
                       style: TextStyle(fontSize: 17.0),
-                    ), content: Text('개 짖는 소리')),
-                Padding(padding: const EdgeInsets.all(18.0)),
+                    ),
+                    content: Text('개 짖는 소리')),
+                Padding(padding: const EdgeInsets.all(12.0)),
                 TextTitleWithDescriptionButtonBox(
                     title: Text(
                       "다시 알림",
@@ -56,16 +58,21 @@ class alarmConfigurationBox extends StatelessWidget {
             ),
           ),
         ),
-        TextButton(
-          style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(IOS_SYSTEM_GRAY[2])),
-          onPressed: () {},
-          child: Text(
-            '알람 삭제',
-            style: TextStyle(color: IOS_RED, fontSize: 12),
-          ),
-        ),
+        Container(
+          width: double.infinity,
+          margin: EdgeInsets.all(13),
+          child: TextButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(IOS_SYSTEM_GRAY[2])),
+              onPressed: () {},
+              child: Expanded(
+                child: Text(
+                  '알람 삭제',
+                  style: TextStyle(color: IOS_RED, fontSize: 13),
+                ),
+              )),
+        )
       ],
     );
   }
